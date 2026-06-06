@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"> <!--if there is no particular paramerter/element to pass just pass the empty parameter (default)=> ~{} -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+</head>
+<body>
+    <div id="content">
+        <h1>Welcome to about page</h1>
+    </div>
+    <script>
+        console.log("about page");
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is about page</h1>
+    <hr>
+    <div class="host-tag" th:replace="${isLogin} ? ~{base :: test(~{::section})}">
+        <p>This is dynamic content</p>
+        <section>This is second dynamic content</section>
+    </div>
+</body>
+</html> -->

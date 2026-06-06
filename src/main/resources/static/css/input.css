@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Core Theme Tokens (Default Light Theme Values) */
+  --color-neutral-primary: #ffffff;
+  --color-neutral-secondary-soft: #f9fafb;
+  --color-neutral-tertiary: #f3f4f6;
+  
+  --color-brand: #1c64f2;
+  --color-brand-strong: #1e429f;
+  --color-brand-medium: #3f83f8;
+  --color-fg-brand: #1c64f2;
+
+  --color-heading: #111827;
+  --color-body: #4b5563;
+  --color-default: #e5e7eb;
+  --radius-base: 0.375rem;
+
+  /* Explicit Light Mode Button Mapping (Solid Contrasting Black/Dark Grays) */
+  --color-btn-login-bg: #111827;        /* Pure contrasting dark gray */
+  --color-btn-login-hover: #1f2937;
+  
+  --color-btn-signup-bg: #1f2937;       /* Slightly lighter charcoal slate */
+  --color-btn-signup-hover: #374151;
+}
+
+/* Explicit Dark Theme Variable Overrides */
+.dark {
+  --color-neutral-primary: #1f2937;       
+  --color-neutral-secondary-soft: #111827; 
+  --color-neutral-tertiary: #374151;      
+  
+  --color-heading: #f9fafb;               
+  --color-body: #d1d5db;                  
+  --color-default: #4b5563;               
+  
+  --color-brand: #3f83f8;
+
+  /* Explicit Dark Mode Button Inversions (Your Exact Blue Brand Layout Profiles) */
+  --color-btn-login-bg: #1c64f2;         /* Standard light theme brand blue */
+  --color-btn-login-hover: #1e429f;      /* Brand strong deep blue */
+  
+  --color-btn-signup-bg: #1e429f;        /* Brand strong deep blue */
+  --color-btn-signup-hover: #1c64f2;     /* Standard light theme brand blue */
+}

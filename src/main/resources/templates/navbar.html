@@ -1,0 +1,49 @@
+<nav data-th-fragment="navbar" class="bg-neutral-primary fixed w-full z-20 top-0 start-0 border-b border-default transition-colors duration-200">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    
+    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img data-th-src="@{'https://cdn-icons-png.flaticon.com/128/17059/17059907.png'}" class="h-7" alt="Smart Contact Manager Logo">
+        <span class="self-center text-xl text-heading font-semibold whitespace-nowrap">Smart Contact Manager</span>
+    </a>
+    
+    <div class="flex items-center md:order-2 space-x-3 md:space-x-4 rtl:space-x-reverse">
+        
+        <button type="button" id="theme_toggle_btn" class="text-body hover:bg-neutral-tertiary w-9 h-9 flex items-center justify-center rounded-base focus:outline-none transition-colors">
+            <i class="fa-solid fa-circle-half-stroke text-lg"></i>
+            <span class="sr-only">Toggle Theme</span>
+        </button>
+
+        <button type="button" class="text-white bg-btn-login-bg hover:bg-btn-login-hover font-medium rounded-base text-sm px-4 py-2 focus:outline-none transition-colors">
+          <a data-th-href="@{'/login'}" class="text-white decoration-none">Login</a> 
+        </button>
+
+        <button type="button" class="text-white bg-btn-login-bg hover:bg-btn-login-hover font-medium rounded-base text-sm px-4 py-2 focus:outline-none transition-colors">
+          <a data-th-href="@{'/register'}" class="text-white decoration-none">SignUp</a> 
+        </button>
+        
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-tertiary focus:outline-none" aria-controls="navbar-sticky" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-default rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+        <li>
+          <a data-th-href="@{'/home'}" class="block py-2 px-3 text-white bg-brand rounded-sm md:bg-transparent md:text-fg-brand md:p-0" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a data-th-href="@{'/about'}" class="block py-2 px-3 text-heading rounded-base hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0 transition-colors">About</a>
+        </li>
+        <li>
+          <a data-th-href="@{'/service'}" class="block py-2 px-3 text-heading rounded-base hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0 transition-colors">Services</a>
+        </li>
+        <li>
+          <a data-th-href="@{'/contact'}" class="block py-2 px-3 text-heading rounded-base hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0 transition-colors">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
