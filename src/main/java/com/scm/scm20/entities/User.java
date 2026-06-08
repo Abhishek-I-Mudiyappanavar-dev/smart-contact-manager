@@ -45,7 +45,4 @@ public class User {
     @OneToMany(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private List<Contact> contacts = new ArrayList<>();
 
-    @OneToMany(mappedBy="user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    private List<SocialLink> links = new ArrayList<>();
-
 }
