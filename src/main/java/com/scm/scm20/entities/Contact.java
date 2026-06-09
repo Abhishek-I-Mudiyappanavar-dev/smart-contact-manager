@@ -33,11 +33,6 @@ public class Contact {
     @Column(columnDefinition="TEXT")
     private String description;
     private boolean favorite=false;
-    @Column(length=2048)
-    private String websiteLink;
-    @Column(length=2048)
-    private String linkedInLink;
-    //private List<String> socialLinks = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
