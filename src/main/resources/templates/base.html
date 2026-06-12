@@ -6,29 +6,28 @@
     <title data-th-replace="${title}">SCM</title>
     <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>
 <body class="min-h-screen bg-neutral-primary text-heading flex flex-col transition-colors duration-200">
 
     <div data-th-replace="~{navbar :: navbar}"></div>
 
-    <main class="mt-20 px-4 max-w-screen-xl w-full mx-auto flex-grow flex flex-col justify-between">
+    <main class="mt-24 px-4 sm:px-8 md:px-16 max-w-8xl w-full mx-auto flex-grow flex flex-col justify-between">
         <div class="w-full">
-            <div class="text-xs text-body opacity-70">Welcome to SCM page</div>
+            <div class="text-xs text-body opacity-70"></div>
 
-            <section class="p-2">
+            <section class="py-2">
                 <div data-th-replace="${content}"></div>
             </section>
         </div>
 
-        <footer class="p-2 border-t border-default text-body text-sm">
+        <footer class="py-4 mt-12 border-t border-default text-body text-sm w-full">
             Footer: Code for knowledge
         </footer>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
     <script data-th-src="@{'/js/script.js'}"></script>
-
     <th:block data-th-replace="${script}"></th:block>
 </body>
 </html>
