@@ -20,7 +20,7 @@
 
   /* Explicit Light Mode Button Mapping (Solid Contrasting Black/Dark Grays) */
   --color-btn-login-bg: #111827;        /* Pure contrasting dark gray */
-  --color-btn-login-hover: #1f2937;
+  --color-btn-login-hover: #374151;
   
   --color-btn-signup-bg: #1f2937;       /* Slightly lighter charcoal slate */
   --color-btn-signup-hover: #374151;

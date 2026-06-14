@@ -38,7 +38,7 @@ public class Contact {
     @JoinColumn(name="user_id", nullable=false)
     private User user;
 
-    @OneToMany(mappedBy="contact", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    @OneToMany(mappedBy="contact", cascade=CascadeType.ALL, orphanRemoval = true, fetch=FetchType.LAZY)
     private List<SocialLink> links = new ArrayList<>();
 
 }

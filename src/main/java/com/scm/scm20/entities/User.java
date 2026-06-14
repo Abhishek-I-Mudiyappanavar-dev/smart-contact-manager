@@ -32,6 +32,8 @@ public class User {
 
     @Column(length=2048)
     private String profilePic;
+
+    private String phoneNumber;
     
     //information
     private boolean enabled=false;
