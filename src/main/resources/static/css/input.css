@@ -4,9 +4,9 @@
 
 @theme {
   /* Core Theme Tokens (Default Light Theme Values) */
-  --color-neutral-primary: #ffffff;
-  --color-neutral-secondary-soft: #f9fafb;
-  --color-neutral-tertiary: #f3f4f6;
+  --color-neutral-primary: #f3efe8;
+  --color-neutral-secondary-soft: #fbfaf7;
+  --color-neutral-secondary-soft: #fbfaf7;
   
   --color-brand: #1c64f2;
   --color-brand-strong: #1e429f;
@@ -15,8 +15,13 @@
 
   --color-heading: #111827;
   --color-body: #4b5563;
-  --color-default: #e5e7eb;
+  --color-default: #dcd5c8;
+  --color-default-medium: #cfc6b8;
   --radius-base: 0.375rem;
+
+  /*nav bar */
+  --color-neutral-navbar: #faf8f3;
+
 
   /* Explicit Light Mode Button Mapping (Solid Contrasting Black/Dark Grays) */
   --color-btn-login-bg: #111827;        /* Pure contrasting dark gray */
@@ -28,15 +33,19 @@
 
 /* Explicit Dark Theme Variable Overrides */
 .dark {
-  --color-neutral-primary: #1f2937;       
-  --color-neutral-secondary-soft: #111827; 
-  --color-neutral-tertiary: #374151;      
+  --color-neutral-primary: #1a2235;       
+  --color-neutral-secondary-soft: #0f172a;
+  --color-neutral-tertiary: #374151;
   
   --color-heading: #f9fafb;               
   --color-body: #d1d5db;                  
-  --color-default: #4b5563;               
+  --color-default: #374151;
+  --color-default-medium: #4b5563;              
   
   --color-brand: #3f83f8;
+
+  /* nav bar */
+  --color-neutral-navbar: #111827;
 
   /* Explicit Dark Mode Button Inversions (Your Exact Blue Brand Layout Profiles) */
   --color-btn-login-bg: #1c64f2;         /* Standard light theme brand blue */
