@@ -34,44 +34,49 @@
                         SpeedUp the process of building this project.
                     </p>
 
-                    <form action="" class="mt-5">
+                    <form data-th-action="@{'/do-register'}" 
+                    method="post" 
+                    data-th-object="${userForm}"
+                    class="mt-5">
                         <div class="mb-3">
                             <label for="name" class="block mb-2.5 text-sm font-medium text-heading">Name</label>
-                            <input type="text" id="name"
-                                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                            <input type="text" id="name" data-th-field="*{name}"
+                                class="bg-neutral-secondary-medium border border-default-medium text-input-text rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                                 placeholder="Enter here" required />
                         </div>
                         <div class="mb-3">
                             <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email</label>
-                            <input type="email" id="email"
-                                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                            <input type="email" id="email" data-th-field="*{email}"
+                                class="bg-neutral-secondary-medium border border-default-medium text-input-text text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                                 placeholder="name@flowbite.com" required />
                         </div>
                         <div class="mb-3">
                             <label for="password" class="block mb-2.5 text-sm font-medium text-heading">Password</label>
-                            <input type="password" id="password"
-                                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                            <input type="password" id="password" data-th-field="*{password}"
+                                class="bg-neutral-secondary-medium border border-default-medium text-input-text text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                                 placeholder="Enter Strong password" required />
                         </div>
                         <div class="mb-3">
-                            <label for="phone" class="block mb-2.5 text-sm font-medium text-heading">Your email</label>
-                            <input type="text" id="phone"
-                                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+                            <label for="phone" class="block mb-2.5 text-sm font-medium text-heading">Phone number</label>
+                            <input type="text" id="phone" data-th-field="*{phoneNumber}"
+                                class="bg-neutral-secondary-medium border border-default-medium text-input-text text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                                 placeholder="Phone Number" required />
                         </div>
+
+                        <!-- data-th-field="*{email}" : field name should be same as defined in object -->
+
                         <div class="mb-3">
 
                             <label for="about" class="block mb-2.5 text-sm font-medium text-heading">Write something
                                 about yourself
                             </label>
-                            <textarea id="about" rows="4"
-                                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full p-3.5 shadow-xs placeholder:text-body"
+                            <textarea id="about" rows="4" data-th-field="*{about}"
+                                class="bg-neutral-secondary-medium border border-default-medium text-input-text text-sm rounded-base focus:ring-brand focus:border-brand block w-full p-3.5 shadow-xs placeholder:text-body"
                                 placeholder="Write here..."></textarea>
 
                         </div>
-                    </form>
 
-                    <div class="w-full flex justify-between items-center mt-6">
+                        <div class="w-full flex justify-between items-center mt-6">
 
                         <button type="submit"
                             class="text-white bg-btn-login-bg hover:bg-btn-login-hover font-medium rounded-base text-sm px-5 py-2.5 focus:outline-none transition-colors">
@@ -82,6 +87,7 @@
                             class="text-white bg-orange-700 hover:bg-orange-600 dark:bg-orange-800 dark:hover:bg-orange-700 font-medium rounded-base text-sm px-5 py-2.5 transition-colors">
                             Reset
                         </button>
+                    </form>
 
                     </div>
 

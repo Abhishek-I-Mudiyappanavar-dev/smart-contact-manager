@@ -22,6 +22,10 @@
   /*nav bar */
   --color-neutral-navbar: #faf8f3;
 
+  /* input */
+  --color-input-bg:#f9fafb ;
+  --color-input-text: #1f2937;
+
 
   /* Explicit Light Mode Button Mapping (Solid Contrasting Black/Dark Grays) */
   --color-btn-login-bg: #111827;        /* Pure contrasting dark gray */
@@ -36,6 +40,12 @@
   --color-neutral-primary: #1a2235;       
   --color-neutral-secondary-soft: #0f172a;
   --color-neutral-tertiary: #374151;
+
+  --color-neutral-secondary-medium: #1f2937;
+
+  /* input */
+  --color-input-bg:#f9fafb ;
+  --color-input-text: #1f2937;
   
   --color-heading: #f9fafb;               
   --color-body: #d1d5db;                  
