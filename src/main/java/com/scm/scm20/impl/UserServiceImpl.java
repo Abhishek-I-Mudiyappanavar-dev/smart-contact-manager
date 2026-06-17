@@ -4,15 +4,15 @@ package com.scm.scm20.impl;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.scm.scm20.entities.User;
+import com.scm.scm20.exceptions.ResourceNotFoundException;
 import com.scm.scm20.repositories.UserRepo;
 import com.scm.scm20.services.UserService;
-import com.scm.scm20.helpers.ResourceNotFoundException;
 
 @Service
 public class UserServiceImpl implements UserService{
