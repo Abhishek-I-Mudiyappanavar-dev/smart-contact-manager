@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.scm.scm20.entities.User;
 import com.scm.scm20.forms.UserForm;
+import com.scm.scm20.helpers.Message;
+import com.scm.scm20.helpers.MessageType;
 import com.scm.scm20.services.UserService;
+
+import jakarta.servlet.http.HttpSession;
 
 
 @Controller
@@ -69,7 +73,7 @@ public class PageController {
     }
 
     @PostMapping(value="/do-register")
-    public String processRegister(@ModelAttribute UserForm userForm){
+    public String processRegister(@ModelAttribute UserForm userForm, HttpSession session){
         System.out.println("Processing Registration");
         //fetch form data
         //UserForm
@@ -87,13 +91,20 @@ public class PageController {
         .password(userForm.getPassword())
         .about(userForm.getAbout())
         .phoneNumber(userForm.getPhoneNumber())
-        .profilePic("data:image/jpeg;base64,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")
+        .profilePic("D:/downloads/profilePic.jpg")
         .build();
+
         User savedUser = userService.saveUser(user);
         System.out.println("User saved");
 
         //message = "Registration Successful"
+        //add message
+
+        Message message = Message.builder().content("Registration Successful").type(MessageType.blue).build();
+        session.setAttribute("message",message);
+
         //redirect to login page
         return "redirect:/register";
     }
 }
+

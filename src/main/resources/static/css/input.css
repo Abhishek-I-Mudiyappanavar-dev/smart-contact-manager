@@ -33,6 +33,11 @@
   
   --color-btn-signup-bg: #1f2937;       /* Slightly lighter charcoal slate */
   --color-btn-signup-hover: #374151;
+
+  /* alert message */
+  --color-brand-softer: #dbeafe;
+  --color-brand-subtle: #93c5fd;
+  --color-fg-brand-strong: #1e3a8a;
 }
 
 /* Explicit Dark Theme Variable Overrides */
@@ -63,4 +68,9 @@
   
   --color-btn-signup-bg: #1e429f;        /* Brand strong deep blue */
   --color-btn-signup-hover: #1c64f2;     /* Standard light theme brand blue */
+
+  /* alert message */
+  --color-brand-softer: #172554;
+  --color-brand-subtle: #1e40af;
+  --color-fg-brand-strong: #bfdbfe;
 }
