@@ -40,31 +40,50 @@
                     <form data-th-action="@{'/do-register'}" 
                     method="post" 
                     data-th-object="${userForm}"
-                    class="mt-5">
+                    class="mt-5" novalidate>
                         <div class="mb-3">
                             <label for="name" class="block mb-2.5 text-sm font-medium text-heading">Name</label>
                             <input type="text" id="name" data-th-field="*{name}"
                                 class="bg-neutral-secondary-medium border border-default-medium text-input-text rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                                 placeholder="Enter here" required />
                         </div>
+
+                        <p data-th-if="${#fields.hasErrors('name')}"
+                        data-th-errors="*{name}"
+                        class="text-red-600 pb-4 px-2"></p>
+
                         <div class="mb-3">
                             <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email</label>
                             <input type="email" id="email" data-th-field="*{email}"
                                 class="bg-neutral-secondary-medium border border-default-medium text-input-text text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                                 placeholder="name@flowbite.com" required />
                         </div>
+
+                        <p data-th-if="${#fields.hasErrors('email')}"
+                        data-th-errors="*{email}"
+                        class="text-red-600 pb-4 px-2"></p>
+
                         <div class="mb-3">
                             <label for="password" class="block mb-2.5 text-sm font-medium text-heading">Password</label>
                             <input type="password" id="password" data-th-field="*{password}"
                                 class="bg-neutral-secondary-medium border border-default-medium text-input-text text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                                 placeholder="Enter Strong password" required />
                         </div>
+
+                        <p data-th-if="${#fields.hasErrors('password')}"
+                        data-th-errors="*{password}"
+                        class="text-red-600 pb-4 px-2"></p>
+
                         <div class="mb-3">
                             <label for="phone" class="block mb-2.5 text-sm font-medium text-heading">Phone number</label>
                             <input type="text" id="phone" data-th-field="*{phoneNumber}"
                                 class="bg-neutral-secondary-medium border border-default-medium text-input-text text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                                 placeholder="Phone Number" required />
                         </div>
+
+                        <p data-th-if="${#fields.hasErrors('phoneNumber')}"
+                        data-th-errors="*{phoneNumber}"
+                        class="text-red-600 pb-4 px-2"></p>
 
                         <!-- data-th-field="*{email}" : field name should be same as defined in object -->
 
@@ -76,6 +95,10 @@
                             <textarea id="about" rows="4" data-th-field="*{about}"
                                 class="bg-neutral-secondary-medium border border-default-medium text-input-text text-sm rounded-base focus:ring-brand focus:border-brand block w-full p-3.5 shadow-xs placeholder:text-body"
                                 placeholder="Write here..."></textarea>
+
+                                <p data-th-if="${#fields.hasErrors('about')}"
+                                    data-th-errors="*{about}"
+                                    class="text-red-600 pb-4 px-2"></p>
 
                         </div>
 

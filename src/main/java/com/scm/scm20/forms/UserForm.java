@@ -23,6 +23,7 @@ public class UserForm {
     private String name;
 
     @Email(message="Invalid Email Address")
+    @NotBlank(message="Email is required")
     private String email;
 
     @NotBlank(message="Password is required")

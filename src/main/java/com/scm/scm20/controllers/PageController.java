@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.BindingResult;
+import jakarta.validation.Valid;
 
 import com.scm.scm20.entities.User;
 import com.scm.scm20.forms.UserForm;
@@ -73,13 +75,16 @@ public class PageController {
     }
 
     @PostMapping(value="/do-register")
-    public String processRegister(@ModelAttribute UserForm userForm, HttpSession session){
+    public String processRegister(@Valid @ModelAttribute UserForm userForm, BindingResult rBindingResult, HttpSession session){
         System.out.println("Processing Registration");
         //fetch form data
         //UserForm
         System.out.println(userForm);
 
         // TODO: validate form data
+        if(rBindingResult.hasErrors()){
+            return "register";
+        };
 
         //save to database
 
