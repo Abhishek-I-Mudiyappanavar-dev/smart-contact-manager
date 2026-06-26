@@ -1,19 +1,45 @@
 package com.scm.scm20.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 @Configuration
 public class SecurityConfig {
 
     // create user and login using java code with in memory service
+    
+    //user detail service object
+    @Autowired
+    private SecurityCustomUserDetailService userDetailService;
+
     @Bean
-    public UserDetailsService userDetailsService(){
+    public AuthenticationProvider authenticationProvider(){
+
+        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider(userDetailService);
+    
+        //password encoder object
+        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());       
+
+        return daoAuthenticationProvider;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
+}
+
+
+
+// @Bean
+    /* public UserDetailsService userDetailsService(){
 
         UserDetails user1 = User
         .withUsername("admin123")
@@ -29,6 +55,4 @@ public class SecurityConfig {
         var inMemoryUserDetailsManager =new InMemoryUserDetailsManager(user1,user2);
         return inMemoryUserDetailsManager;
 
-    }
-
-}
+    } */
