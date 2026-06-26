@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.*;
 
 import com.scm.scm20.repositories.UserRepo;
+import com.scm.scm20.entities.User;
 
 @Service
 public class SecurityCustomUserDetailService implements UserDetailsService{
@@ -15,12 +16,21 @@ public class SecurityCustomUserDetailService implements UserDetailsService{
     private UserRepo userRepo;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        
-        //load user
-        return userRepo.findByEmail(username).orElseThrow(()-> new UsernameNotFoundException("User not found with email "+username));
-        
-    };
+public UserDetails loadUserByUsername(String username) {
 
+    System.out.println("Username received: " + username);
+
+    User user = userRepo.findByEmail(username)
+            .orElseThrow(() ->
+                    new UsernameNotFoundException(username));
+
+    System.out.println("User found: " + user.getEmail());
+
+    return user;
+}
 
 }
+
+/* 
+ return userRepo.findByEmail(username).orElseThrow(()-> new UsernameNotFoundException("User not found with email "+username));
+*/

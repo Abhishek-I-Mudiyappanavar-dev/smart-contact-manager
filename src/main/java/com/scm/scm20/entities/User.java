@@ -43,6 +43,7 @@ public class User implements UserDetails {
     private String phoneNumber;
     
     //information
+    @Builder.Default
     private boolean enabled=true;
     private boolean emailVerified=false;
     private boolean phoneVerified=false;
@@ -68,7 +69,7 @@ public class User implements UserDetails {
 
         Collection<SimpleGrantedAuthority> roles = roleList.stream().map(role-> new SimpleGrantedAuthority(role)).collect(Collectors.toList());
 
-        return Collections.emptyList();
+        return roles;
     }
 
     // for this project:

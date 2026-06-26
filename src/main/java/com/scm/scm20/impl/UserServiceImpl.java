@@ -8,11 +8,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.scm.scm20.entities.User;
 import com.scm.scm20.exceptions.ResourceNotFoundException;
 import com.scm.scm20.repositories.UserRepo;
 import com.scm.scm20.services.UserService;
+import com.scm.scm20.helpers.AppConstants;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -21,12 +23,18 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepo userRepo;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public User saveUser(User user) {
 
         //password encode
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+        user.setRoleList(List.of(AppConstants.ROLE_USER));
 
         return userRepo.save(user);
     }
@@ -49,7 +57,7 @@ public class UserServiceImpl implements UserService{
         user2.setAbout(user.getAbout());
         user2.setPhoneNumber(user.getPhoneNumber());
         user2.setProfilePic(user.getProfilePic());
-        user2.setEnabled(user.isEnabled());
+        user2.setEnabled(true);
         user2.setEmailVerified(user.isEmailVerified());
         user2.setPhoneVerified(user.isPhoneVerified());
         user2.setProvider(user.getProvider());

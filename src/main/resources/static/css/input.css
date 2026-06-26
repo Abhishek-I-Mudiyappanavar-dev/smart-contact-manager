@@ -3,11 +3,10 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Core Theme Tokens (Default Light Theme Values) */
-  --color-neutral-primary: #f3efe8;
-  --color-neutral-secondary-soft: #fbfaf7;
-  --color-neutral-secondary-soft: #fbfaf7;
-  
+  /* Core Theme Tokens */
+  --color-neutral-primary: #f3efe8 ;
+  --color-neutral-secondary-soft: #fbfaf7 ;
+
   --color-brand: #1c64f2;
   --color-brand-strong: #1e429f;
   --color-brand-medium: #3f83f8;
@@ -15,61 +14,59 @@
 
   --color-heading: #111827;
   --color-body: #4b5563;
-  --color-default: #dcd5c8;
-  --color-default-medium: #cfc6b8;
-  --radius-base: 0.375rem;
+  --color-default: #dcd5c8 ;
+  --color-default-medium: #cfc6b8 ;
 
-  /*nav bar */
-  --color-neutral-navbar: #faf8f3;
+  --radius-base: 0.375rem ;
 
-  /* input */
-  --color-input-bg:#f9fafb ;
+  /* Navbar */
+  --color-neutral-navbar: #faf8f3 ;
+
+  /* Input */
+  --color-input-bg: #f9fafb ;
   --color-input-text: #1f2937;
 
-
-  /* Explicit Light Mode Button Mapping (Solid Contrasting Black/Dark Grays) */
-  --color-btn-login-bg: #111827;        /* Pure contrasting dark gray */
+  /* Buttons */
+  --color-btn-login-bg: #111827;
   --color-btn-login-hover: #374151;
-  
-  --color-btn-signup-bg: #1f2937;       /* Slightly lighter charcoal slate */
+
+  --color-btn-signup-bg: #1f2937;
   --color-btn-signup-hover: #374151;
 
-  /* alert message */
-  --color-brand-softer: #dbeafe;
+  /* Alert */
+  --color-brand-softer: #dbeafe ;
   --color-brand-subtle: #93c5fd;
   --color-fg-brand-strong: #1e3a8a;
 }
 
-/* Explicit Dark Theme Variable Overrides */
 .dark {
-  --color-neutral-primary: #1a2235;       
+  --color-neutral-primary: #1a2235;
   --color-neutral-secondary-soft: #0f172a;
   --color-neutral-tertiary: #374151;
-
   --color-neutral-secondary-medium: #1f2937;
 
-  /* input */
-  --color-input-bg:#f9fafb ;
+  /* Input */
+  --color-input-bg: #f9fafb;
   --color-input-text: #1f2937;
-  
-  --color-heading: #f9fafb;               
-  --color-body: #d1d5db;                  
+
+  --color-heading: #f9fafb;
+  --color-body: #d1d5db;
   --color-default: #374151;
-  --color-default-medium: #4b5563;              
-  
+  --color-default-medium: #4b5563;
+
   --color-brand: #3f83f8;
 
-  /* nav bar */
+  /* Navbar */
   --color-neutral-navbar: #111827;
 
-  /* Explicit Dark Mode Button Inversions (Your Exact Blue Brand Layout Profiles) */
-  --color-btn-login-bg: #1c64f2;         /* Standard light theme brand blue */
-  --color-btn-login-hover: #1e429f;      /* Brand strong deep blue */
-  
-  --color-btn-signup-bg: #1e429f;        /* Brand strong deep blue */
-  --color-btn-signup-hover: #1c64f2;     /* Standard light theme brand blue */
+  /* Buttons */
+  --color-btn-login-bg: #1c64f2;
+  --color-btn-login-hover: #1e429f;
 
-  /* alert message */
+  --color-btn-signup-bg: #1e429f;
+  --color-btn-signup-hover: #1c64f2;
+
+  /* Alert */
   --color-brand-softer: #172554;
   --color-brand-subtle: #1e40af;
   --color-fg-brand-strong: #bfdbfe;

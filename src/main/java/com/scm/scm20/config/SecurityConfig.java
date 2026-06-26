@@ -5,8 +5,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.config.Customizer;
 
 
 @Configuration
@@ -28,6 +31,27 @@ public class SecurityConfig {
 
         return daoAuthenticationProvider;
     }
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+
+        //configuration
+        // Configure public and protected URL access rules
+        httpSecurity.authorizeHttpRequests(authorize->{
+
+            authorize.requestMatchers("/user/**").authenticated();
+            authorize.anyRequest().permitAll();
+
+            // authorize.requestMatchers("/home","/css/**","/js/**","/images/**","/favicon.ico").permitAll();
+            // authorize.requestMatchers("/login","/register").permitAll();
+        });
+
+        //form default login
+        //if we want to change anything about form login check here: form login related
+        httpSecurity.formLogin(Customizer.withDefaults());
+
+        return httpSecurity.build();
+    };
 
     @Bean
     public PasswordEncoder passwordEncoder(){
